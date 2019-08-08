@@ -33,7 +33,7 @@ class Worker(AbstractUser):
             worker = cls.objects.get(id=worker_id)
             worker.delete()
         except cls.DoesNotExist:
-            pass
+            raise Exception
 
     @classmethod
     def _generate_random_string(cls, size=8):
