@@ -16,7 +16,7 @@ class Order(AbstractDateTime):
     def create(cls, title, description, deadline):
         order = cls.objects.create(
             title=title, description=description, deadline=deadline)
-        return order.id
+        return {'order_id': order.id}
 
     @classmethod
     def assign_worker(cls, order_id, worker_id):
