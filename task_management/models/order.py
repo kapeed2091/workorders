@@ -23,3 +23,11 @@ class Order(AbstractDateTime):
         from task_management.models import OrderWorker
         OrderWorker.create(order_id=order_id, worker_id=worker_id)
         return
+
+    @classmethod
+    def is_valid(cls, order_id):
+        try:
+            cls.objects.get(id=order_id)
+            return True
+        except cls.DoesNotExist:
+            return False

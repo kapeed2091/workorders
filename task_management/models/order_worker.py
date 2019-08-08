@@ -19,7 +19,7 @@ class OrderWorker(AbstractDateTime):
         existing_workers = query.count()
 
         if existing_workers >= MAX_WORKERS_FOR_ORDER:
-            return
+            raise Exception
         else:
             cls.objects.create(order_id=order_id, worker_id=worker_id)
 

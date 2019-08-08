@@ -41,3 +41,11 @@ class Worker(AbstractUser):
         import random
         chars = string.ascii_uppercase + string.digits + string.ascii_lowercase
         return ''.join(random.choice(chars) for _ in range(size))
+
+    @classmethod
+    def is_valid(cls, worker_id):
+        try:
+            cls.objects.get(id=worker_id)
+            return True
+        except cls.DoesNotExist:
+            return False
