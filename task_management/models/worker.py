@@ -28,6 +28,16 @@ class Worker(AbstractUser):
         return {'worker_id': worker.id}
 
     @classmethod
+    def get(cls, offset, limit):
+        workers = cls.objects.all().order_by('id')[offset:offset+limit]
+        return [{
+            'worker_id': ei.id,
+            'name': ei.name,
+            'email': ei.email,
+            'company_name': ei.company.name
+        } for ei in workers]
+
+    @classmethod
     def remove(cls, worker_id):
         try:
             worker = cls.objects.get(id=worker_id)
