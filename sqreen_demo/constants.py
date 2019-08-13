@@ -1,0 +1,1 @@
+SQREEN_SECRET_KEY = b'sqreen'
