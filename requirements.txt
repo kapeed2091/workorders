@@ -1,3 +1,6 @@
 Django==2.2.4
 djangorestframework==3.10
 sqreen
+boto3
+slackclient
+requests
