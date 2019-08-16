@@ -4,3 +4,4 @@ sqreen
 boto3
 slackclient
 requests
+mock

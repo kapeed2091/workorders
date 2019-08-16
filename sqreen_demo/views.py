@@ -1,3 +1,4 @@
+import json
 from rest_framework.decorators import api_view
 from rest_framework import status
 from rest_framework.response import Response
@@ -9,7 +10,7 @@ def webhook(request):
 
     request_signature = request.headers['X-Sqreen-Integrity']
     request_body_raw = request.stream.read()
-    request_data = request.data
+    request_data = json.loads(request_body_raw)
 
     signature_status = check_signature(
         SQREEN_SECRET_KEY, request_signature, request_body_raw)
