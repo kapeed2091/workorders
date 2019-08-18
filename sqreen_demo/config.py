@@ -2,18 +2,18 @@ import os
 from enum import Enum
 from sqreen_demo.dispatchers import *
 
-AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID', '')
-AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY', '')
+AWS_ACCESS_KEY_ID = os.environ.get('CUSTOM_AWS_ACCESS_KEY_ID', '')
+AWS_SECRET_ACCESS_KEY = os.environ.get('CUSTOM_AWS_SECRET_ACCESS_KEY', '')
 
 SQREEN_SECRET_KEY = b'sqreen'
 
 
 class DispatcherEnum(Enum):
-    http = {'notify': True, 'class': HTTPDispatcher}
+    http = {'notify': False, 'class': HTTPDispatcher}
     sms = {'notify': False, 'class': SMSDispatcher}
-    email = {'notify': True, 'class': EmailDispatcher}
-    slack = {'notify': True, 'class': SlackDispatcher}
-    log = {'notify': True, 'class': LogDispatcher}
+    email = {'notify': False, 'class': EmailDispatcher}
+    slack = {'notify': False, 'class': SlackDispatcher}
+    log = {'notify': False, 'class': LogDispatcher}
 
     @classmethod
     def get_dispatchers_to_notify(cls):

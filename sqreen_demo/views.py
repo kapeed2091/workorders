@@ -7,10 +7,9 @@ from rest_framework.response import Response
 @api_view(['POST'])
 def webhook(request):
     from sqreen_demo.config import SQREEN_SECRET_KEY
-
-    request_signature = request.headers['X-Sqreen-Integrity']
-    request_body_raw = request.stream.read()
-    request_data = json.loads(request_body_raw)
+    request_signature = request.META['HTTP_X_SQREEN_INTEGRITY']
+    request_body_raw = request.body
+    request_data = request.data
 
     signature_status = check_signature(
         SQREEN_SECRET_KEY, request_signature, request_body_raw)
