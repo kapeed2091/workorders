@@ -5,14 +5,14 @@
 
 ```bash
 pip install virtualenv
-virtualenv .venv
+virtualenv .venv -p python3.6
 ```
 
 ## Install requirements
 
 ```bash
 pip install -r requirements.txt
-pip install -r requirements_deploy.txt # (Not needed for dev purpose)
+pip install -r requirements_deploy.txt
 ```
 
 ## To run django management commands & usage
@@ -68,6 +68,11 @@ Reference: sqreen_demo.dispatchers.http_dispatcher.HTTPDispatcher
 
 ```
 Reference: sqreen_demo.tests.test_check_signature.TestCheckSignature
+```
+
+To run tests,
+```
+python manage.py tests 
 ```
 
 # Workorders Application

@@ -2,7 +2,7 @@
   "dev": {
     "aws_region": "ap-south-1",
     "api_name": "sqreen",
-    "django_settings": "workorders.settings",
+    "django_settings": "workorders.settings.dev",
     "memory_size": 1536,
     "timeout_seconds": 300,
     "keep_warm": false,
