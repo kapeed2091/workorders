@@ -8,6 +8,7 @@
     "keep_warm": false,
     "project_name": "workorders-sqreen",
     "runtime": "python3.6",
+    "cors": true,
     "s3_bucket": "sqreen-test-kapeed2091",
     "vpc_config": {
       "SubnetIds": [

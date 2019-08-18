@@ -5,3 +5,4 @@ boto3
 slackclient
 requests
 mock
+django-cors-headers
