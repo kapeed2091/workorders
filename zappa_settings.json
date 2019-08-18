@@ -1,0 +1,22 @@
+{
+  "dev": {
+    "aws_region": "ap-south-1",
+    "api_name": "sqreen",
+    "django_settings": "workorders.settings",
+    "memory_size": 1536,
+    "timeout_seconds": 300,
+    "keep_warm": false,
+    "project_name": "workorders-sqreen",
+    "runtime": "python3.6",
+    "s3_bucket": "sqreen-test-kapeed2091",
+    "vpc_config": {
+      "SubnetIds": [
+        "subnet-36ecca5e",
+        "subnet-91ee79dd"
+      ],
+      "SecurityGroupIds": [
+        "sg-eafda685"
+      ]
+    }
+  }
+}

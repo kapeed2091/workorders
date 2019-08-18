@@ -12,6 +12,7 @@ virtualenv .venv
 
 ```bash
 pip install -r requirements.txt
+pip install -r requirements_deploy.txt # (Not needed for dev purpose)
 ```
 
 ## To run django management commands & usage
@@ -22,6 +23,54 @@ export DJANGO_SETTINGS_MODULE=workorders.settings
 python manage.py migrate
 python manage.py runserver 8000 #(Runs on 8000 port)
 ```
+
+# Sqreen Application
+
+## Check Signature
+
+```
+Reference: sqreen_demo.views.check_signature
+```
+
+## Dispatch Notification to multiple targets
+
+### Email
+
+```
+Reference: sqreen_demo.dispatchers.email_dispatcher.EmailDispatcher
+```
+
+### Slack
+
+```
+Reference: sqreen_demo.dispatchers.slack_dispatcher.SlackDispatcher
+```
+
+### SMS
+
+```
+Reference: sqreen_demo.dispatchers.sms_dispatcher.SMSDispatcher
+```
+
+### Log
+
+```
+Reference: sqreen_demo.dispatchers.log_dispatcher.LogDispatcher
+```
+
+### HTTP
+
+```
+Reference: sqreen_demo.dispatchers.http_dispatcher.HTTPDispatcher
+```
+
+## Tests
+
+```
+Reference: sqreen_demo.tests.test_check_signature.TestCheckSignature
+```
+
+# Workorders Application
 
 ## Functionality / User Stories
 

@@ -1,0 +1,5 @@
+zappa
+lambda-packages
+#psycopg2==2.6.1
+mysqlclient==1.3.12
+django-storages==1.7.1
