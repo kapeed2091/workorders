@@ -30,3 +30,5 @@ SMS_COUNTRY_USERNAME = os.environ.get('SMS_COUNTRY_USERNAME', '')
 SMS_COUNTRY_PASSWORD = os.environ.get('SMS_COUNTRY_PASSWORD', '')
 SMS_COUNTRY_SID = os.environ.get('SMS_COUNTRY_SID', 'SQREEN')
 MOBILE_NUMBER_TO_SEND_SMS = '919490816545'
+
+HTTP_DISPATCHER_URL = 'https://pbxgttj1o2.execute-api.ap-south-1.amazonaws.com/dev/task-management/log-sqreen/'
