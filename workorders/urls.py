@@ -21,5 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^api-auth/', include('rest_framework.urls')),
     url(r'^task-management/', include('task_management.urls')),
-    url(r'^sqreen_demo/', include('sqreen_demo.urls')),
+    url(r'^sqreen-demo/', include('sqreen_demo.urls')),
 ]

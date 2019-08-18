@@ -9,5 +9,5 @@ __all__ = [
     'Company',
     'Worker',
     'Order',
-    'OrderWorker'
+    'OrderWorker',
 ]

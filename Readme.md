@@ -15,16 +15,20 @@ pip install -r requirements.txt
 pip install -r requirements_deploy.txt
 ```
 
-## To run django management commands & usage
+## To run django management commands & usage (in local env)
 
 ```bash
 source .venv/bin/activate
-export DJANGO_SETTINGS_MODULE=workorders.settings
+export DJANGO_SETTINGS_MODULE=workorders.settings.local
 python manage.py migrate
 python manage.py runserver 8000 #(Runs on 8000 port)
 ```
 
 # Sqreen Application
+
+```
+If needed set appropriate values in "sqreen_demo.config" file
+```
 
 ## Check Signature
 
@@ -72,7 +76,7 @@ Reference: sqreen_demo.tests.test_check_signature.TestCheckSignature
 
 To run tests,
 ```
-python manage.py tests 
+python manage.py test sqreen_demo
 ```
 
 # Workorders Application
