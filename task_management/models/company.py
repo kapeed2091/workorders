@@ -7,3 +7,10 @@ class Company(AbstractDateTime):
 
     class Meta:
         app_label = 'task_management'
+
+    def __str__(self):
+        return self.name
+
+    def __unicode__(self):
+        return self.name
+
