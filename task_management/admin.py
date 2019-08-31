@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 from task_management.models import (
-    Company, Worker, Order
+    Company, Worker, Order, OrderWorker
 )
 
 
@@ -15,6 +15,12 @@ class WorkerAdmin(admin.ModelAdmin):
     list_display = ['id', 'name', 'company_id']
 
 
+class OrderWorkerStackedInline(admin.StackedInline):
+    model = OrderWorker
+    extra = 3
+
+
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
     list_display = ['id', 'title', 'description', 'deadline']
+    inline = [OrderWorkerStackedInline, ]
