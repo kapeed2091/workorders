@@ -18,7 +18,12 @@ class OrderWorker(AbstractDateTime):
         query = cls.objects.filter(order_id=order_id)
         existing_workers = query.count()
 
+        if query.filter(worker_id=worker_id).exists():
+            # Handling case where same worker is re-assigned to an order
+            raise Exception
+
         if existing_workers >= MAX_WORKERS_FOR_ORDER:
+            # Handling case where order reached max workers assigned to it
             raise Exception
         else:
             cls.objects.create(order_id=order_id, worker_id=worker_id)

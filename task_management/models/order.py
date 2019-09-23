@@ -22,6 +22,8 @@ class Order(AbstractDateTime):
     def assign_worker(cls, order_id, worker_id):
         from task_management.models import OrderWorker
         OrderWorker.create(order_id=order_id, worker_id=worker_id)
+        # Max workers to an order is handled in create function
+        # Assigning an already assigned worker to an order is handled in create function
         return
 
     @classmethod
